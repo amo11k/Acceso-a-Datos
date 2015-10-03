@@ -47,7 +47,7 @@ public class Exercisi2_3 extends JFrame {
 				try {
 					Exercisi2_3 frame = new Exercisi2_3();
 					frame.setVisible(true);
-					
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -61,20 +61,20 @@ public class Exercisi2_3 extends JFrame {
 	public Exercisi2_3() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 420);
-		
+
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
+
 		JMenu mnNewMenu = new JMenu("Archive");
 		menuBar.add(mnNewMenu);
-		
+
 		JMenuItem mntmNewMenuItem = new JMenuItem("Open...");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				int r = fc.showOpenDialog(null);
-				if (r == JFileChooser.APPROVE_OPTION){
-				     arxiu = fc.getSelectedFile();
+				if (r == JFileChooser.APPROVE_OPTION) {
+					arxiu = fc.getSelectedFile();
 				}
 				String line;
 				builder = new StringBuilder();
@@ -97,7 +97,7 @@ public class Exercisi2_3 extends JFrame {
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem);
-		
+
 		JMenuItem mnNewMenu_1 = new JMenuItem("Save");
 		mnNewMenu_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -108,7 +108,7 @@ public class Exercisi2_3 extends JFrame {
 					out.close();
 					JOptionPane.showMessageDialog(null, "Desat correctament");
 					textArea.setText("");
-					
+
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null, "Error desant l'arxiu");
@@ -116,18 +116,35 @@ public class Exercisi2_3 extends JFrame {
 			}
 		});
 		mnNewMenu.add(mnNewMenu_1);
-		
+
 		JMenuItem mnNewMenu_2 = new JMenuItem("Save as...");
 		mnNewMenu_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// PROGRAMANDO ANDO
+				int r = fc.showSaveDialog(null);
+				if (r == JFileChooser.APPROVE_OPTION) {
+					arxiu = fc.getSelectedFile();
+				}
+				
+				try {
+					fw = new FileWriter(arxiu);
+					out = new BufferedWriter(fw);
+					out.write(textArea.getText());
+					out.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					JOptionPane.showMessageDialog(null, "Error desant l'arxiu");
+				}
+				
+				JOptionPane.showMessageDialog(null, "Desat correctament");
+				textArea.setText("");
+
 			}
 		});
 		mnNewMenu.add(mnNewMenu_2);
-		
+
 		JSeparator separator = new JSeparator();
 		mnNewMenu.add(separator);
-		
+
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Exit");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -135,14 +152,14 @@ public class Exercisi2_3 extends JFrame {
 			}
 		});
 		mnNewMenu.add(mntmNewMenuItem_1);
-		
+
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBounds(20, 141, 420, 310);
 		textArea = new JTextArea(22, 35);
