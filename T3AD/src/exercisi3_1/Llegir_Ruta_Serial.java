@@ -1,4 +1,4 @@
-package exercicis;
+package exercisi3_1;
 
 import java.io.DataInputStream;
 import java.io.FileInputStream;

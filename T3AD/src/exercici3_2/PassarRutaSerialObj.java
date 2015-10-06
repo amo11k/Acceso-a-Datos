@@ -27,8 +27,6 @@ public class PassarRutaSerialObj {
 		r.mostraRuta();
 		out.writeObject(r);
 		out.close();
-		
-
 	}
 
 }
