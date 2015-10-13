@@ -35,21 +35,29 @@ public class PassarRutaObjXML {
 		Ruta r;
 		try {
 			while (true) {
+				//Lee objeto
 				r = (Ruta) f.readObject();
+				//Crea el primer elemento, nombre
 				Element emp = doc.createElement("Ruta");
-				emp.setAttribute("Nom", r.getNom());
-
-				Element fill = doc.createElement("Desnivell");
+				Element fill = doc.createElement("Nom");
+				fill.appendChild(doc.createTextNode(r.getNom()));
+				emp.appendChild(fill);
+				
+				//Crea el primer hijo del primer elemento
+				fill = doc.createElement("Desnivell");
 				fill.appendChild(doc.createTextNode(Integer.toString(r.getDesnivell())));
 				emp.appendChild(fill);
-
+				
+				//Segundo Hijo del primer elemento
 				fill = doc.createElement("Desnivell_Acumulat");
 				fill.appendChild(doc.createTextNode(Integer.toString(r.getDesnivellAcumulat())));
 				emp.appendChild(fill);
-
+				
+				//Tercer Hijo
 				fill = doc.createElement("Punts");
 				emp.appendChild(fill);
-
+				
+				//Añade los hijos del tercer hijo
 				for (int i = 0; i < r.length(); i++) {
 					Element punts = doc.createElement("Punt");
 					punts.setAttribute("Numero", "" + (i + 1));
@@ -66,8 +74,6 @@ public class PassarRutaObjXML {
 
 				}
 
-				// fill = doc.createElement("sou");
-
 				emp.appendChild(fill);
 
 				arrel.appendChild(emp);
@@ -80,7 +86,8 @@ public class PassarRutaObjXML {
 
 		DOMSource source = new DOMSource(doc);
 		StreamResult result = new StreamResult(new FileOutputStream("Rutes.xml"));
-
+		
+		//Convierte el doc en xml
 		trans.transform(source, result);
 	}
 }
