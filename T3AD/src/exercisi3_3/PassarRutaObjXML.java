@@ -49,19 +49,25 @@ public class PassarRutaObjXML {
 
 				fill = doc.createElement("Punts");
 				emp.appendChild(fill);
-				
-				for(int i=0;i<r.length();i++){
-					Element punts = doc.createElement("Punt_"+(i+1));
-					punts.setAttribute("Numero", ""+i);
+
+				for (int i = 0; i < r.length(); i++) {
+					Element punts = doc.createElement("Punt");
+					punts.setAttribute("Numero", "" + (i + 1));
 					fill.appendChild(punts);
-					punts=doc.createElement("Nom");
-					punts.appendChild(doc.createTextNode(r.getPuntNom(i)));
-					fill.appendChild(punts);
-					
+					Element fill2 = doc.createElement("Nom");
+					fill2.appendChild(doc.createTextNode(r.getPuntNom(i)));
+					punts.appendChild(fill2);
+					fill2 = doc.createElement("Longitud");
+					fill2.appendChild(doc.createTextNode(Double.toString(r.getPuntLongitud(i))));
+					punts.appendChild(fill2);
+					fill2 =doc.createElement("Latitud");
+					fill2.appendChild(doc.createTextNode(Double.toString(r.getPuntLatitud(i))));
+					punts.appendChild(fill2);
+
 				}
-				
-				//fill = doc.createElement("sou");
-				
+
+				// fill = doc.createElement("sou");
+
 				emp.appendChild(fill);
 
 				arrel.appendChild(emp);
