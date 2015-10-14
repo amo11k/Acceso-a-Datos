@@ -1,0 +1,92 @@
+{
+  "rutes": 
+    [
+      {
+        "nom": "Pujada a Penyagolosa",
+        "desnivell": 530,
+        "desnivellAcumulat": 530,
+        "punts":  
+          [
+            {
+              "num": 1,
+              "nom": "Sant Joan",
+              "latitud": 40.251036,
+              "longitud": -0.354223
+            },
+            {
+              "num": 2,
+              "nom": "Encreuament",
+              "latitud": 40.25156,
+              "longitud": -0.352507
+            },
+            {
+              "num": 3,
+              "nom": "Barranc de la Pegunta",
+              "latitud": 40.247318,
+              "longitud": -0.351713
+            },
+            {
+              "num": 4,
+              "nom": "El Corralico",
+              "latitud": 40.231708,
+              "longitud": -0.348859
+            },
+            {
+              "num": 5,
+              "nom": "Penyagolosa",
+              "latitud": 40.222632,
+              "longitud": -0.350339
+            }
+          ]
+      },
+      {
+        "nom": "La Magdalena",
+        "desnivell": 51,
+        "desnivellAcumulat": 84,
+        "punts": [
+            {
+              "num": 1,
+              "nom": "Primer Molí",
+              "latitud": 39.993850,
+              "longitud": -0.032941
+            },
+            {
+              "num": 2,
+              "nom": "Segon Molí",
+              "latitud": 39.996280,
+              "longitud": -0.029427
+            },
+            {
+              "num": 3,
+              "nom": "Caminàs",
+              "latitud": 40.005130,
+              "longitud": -0.022569
+            },
+            {
+              "num": 4,
+              "nom": "Riu Sec",
+              "latitud": 40.006765,
+              "longitud": -0.022370
+            },
+            {
+              "num": 5,
+              "nom": "Sant Roc",
+              "latitud": 40.017906,
+              "longitud": -0.022890
+            },
+            {
+              "num": 6,
+              "nom": "Explanada",
+              "latitud": 40.034048,
+              "longitud": -0.006330
+            },
+            {
+              "num": 7,
+              "nom": "La Magdalena",
+              "latitud": 40.034519,
+              "longitud": -0.005856
+            }
+          ]
+      }
+    ]
+}
