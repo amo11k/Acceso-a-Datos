@@ -71,7 +71,6 @@ public class Vis_Rutes_XML_Pantalla extends JFrame implements ActionListener {
 			// de consistir en omplir el JTextArea
 			sBuild = new StringBuilder();
 			nList = (NodeList) arrel.getElementsByTagName("punts").item(combo.getSelectedIndex());
-			System.out.println(nList.getLength());
 			for (int i = 0; i < nList.getLength(); i++) {
 				sBuild.append(nList.item(i).getTextContent() + ")\n");
 			}
