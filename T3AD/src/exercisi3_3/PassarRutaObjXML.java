@@ -19,7 +19,6 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import exemples.Empleat;
 import exercici3_2.Ruta;
 
 public class PassarRutaObjXML {
