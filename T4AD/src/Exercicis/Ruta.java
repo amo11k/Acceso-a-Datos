@@ -21,6 +21,14 @@ public class Ruta implements Serializable{
 		this.desnivell = desnivell;
 		this.desnivellAcumulat = desnivellAcumulat;
 	}
+	
+	public Ruta(String nom, int desnivell, int desnivellAcumulat) {
+		super();
+		this.nom = nom;
+		this.llistaDePunts = null;
+		this.desnivell = desnivell;
+		this.desnivellAcumulat = desnivellAcumulat;
+	}
 
 	public String getNom() {
 		return nom;
