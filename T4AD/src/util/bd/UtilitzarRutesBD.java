@@ -35,7 +35,8 @@ public class UtilitzarRutesBD {
 		}
 		
 		// Buscar una ruta determinada
-		//gRutes.buscaRuta(2).mostraRuta();
+		System.out.println("\n\n\nBusqueda de Rutes");
+		gRutes.buscarRuta(2).mostraRuta();
 		
 		gRutes.close();
 	}

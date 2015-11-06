@@ -17,9 +17,7 @@ public class GestionarRutesBD {
 	Ruta ruta;
 	Connection con = null;
 	Driver driver = null;
-	PreparedStatement st = null;
 	Statement state = null;
-	ResultSet rs = null;
 	String url = "jdbc:sqlite:Rutes.sqlite";
 	String inserir = "INSERT INTO RUTA VALUES (?,?,?,?)";
 	ArrayList<Ruta> llista = null;
@@ -45,31 +43,55 @@ public class GestionarRutesBD {
 
 	public void inserir(Ruta r) {
 		int index;
+		ResultSet rs = null;
+		PreparedStatement st = null;
 		try {
 			// RUTA
-			state = con.createStatement();
-			rs = state.executeQuery("SELECT MAX(num_r) FROM RUTA");
+			st = con.prepareStatement("SELECT MAX(num_r) FROM RUTA");
+			rs = st.executeQuery();
 			index = rs.getInt(1);
-			rs = st.executeQuery("INSER INTO RUTA VALUES(" + (index + 1) + "," + r.getNom() + "," + r.getDesnivell()
-					+ "," + r.getDesnivellAcumulat() + ")");
+			System.out.println(index+r.getNom()+r.getDesnivell()+r.getDesnivellAcumulat());
+			st = con.prepareStatement("INSERT INTO RUTA VALUES(?,?,?,?)");
+			st.setInt(1, index+1);
+			st.setString(2, r.getNom());
+			st.setDouble(3, r.getDesnivell());
+			st.setDouble(4, r.getDesnivellAcumulat());
+			st.executeUpdate();
+			/*rs = st.executeQuery("INSERT INTO RUTA VALUES(" + (index + 1) + "," + r.getNom() + "," + r.getDesnivell()
+					+ "," + r.getDesnivellAcumulat() + ")");*/
 
 			// PUNTS
 			llistaPunts = r.getLlistaDePunts();
+			
 			for (int i = 0; i < llistaPunts.size(); i++) {
-				rs = st.executeQuery("INSERT INTO PUNTS VALUES(" + (index + 1) + "," + i + "," + r.getPuntNom(i) + ","
-						+ r.getPuntLatitud(i) + "," + r.getPuntLongitud(i) + ")");
+				/*rs = st.executeQuery("INSERT INTO PUNTS VALUES(" + (index + 1) + "," + i + "," + r.getPuntNom(i) + ","
+						+ r.getPuntLatitud(i) + "," + r.getPuntLongitud(i) + ")");*/
+				st = con.prepareStatement("INSERT INTO PUNTS VALUES(?,?,?,?,?)");
+				st.setInt(1, index+1);
+				st.setInt(2, (i+1));
+				st.setString(3, r.getPuntNom(i));
+				st.setDouble(4, r.getPuntLatitud(i));
+				st.setDouble(5, r.getPuntLongitud(i));
+				st.executeUpdate();
 			}
 			// st.setInt(1, r.);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				System.out.println("Error closing ResultSet");
+			}
 		}
 	}
 
 	public ArrayList<Ruta> llistat() {
 		llista = new ArrayList<>();
 		Statement st;
+		ResultSet rs = null;
 		try {
 			st = con.createStatement();
 			rs = st.executeQuery("Select * FROM RUTA");
@@ -86,14 +108,12 @@ public class GestionarRutesBD {
 				e.printStackTrace();
 			}
 		}
-		for (Ruta r: llista){
-			r.mostraRuta();
-		}
 		return llista;
 	}
 
 	public Ruta buscarRuta(int index) {
 		// System.out.println("SELECT * FROM RUTA WHERE num_r=" + index);
+		ResultSet rs = null;
 		ruta = new Ruta();
 		llistaPunts=new ArrayList<PuntGeo>();
 		try {
@@ -109,10 +129,9 @@ public class GestionarRutesBD {
 			rs = state.executeQuery("SELECT * FROM PUNTS WHERE num_r=" + index);
 			int count = 0;
 			while(rs.next()){
-				llistaPunts.add(new PuntGeo(rs.getString(2), new Coordenades(rs.getDouble(3), rs.getDouble(4))));
+				llistaPunts.add(new PuntGeo(rs.getString(3), new Coordenades(rs.getDouble(4), rs.getDouble(5))));
 			}
 			ruta.setLlistaDePunts(llistaPunts);
-			ruta.mostraRuta();
 			
 
 		} catch (SQLException e) {
@@ -134,6 +153,10 @@ public class GestionarRutesBD {
 		System.out.println("DROP * FROM RUTA WHERE num_r=" + index);
 	}
 
+	public void guardar(Ruta r){
+		
+	}
+	
 	public static void main(String[] args) {
 		GestionarRutesBD ges = new GestionarRutesBD();
 		ges.llistat();
