@@ -50,22 +50,17 @@ public class GestionarRutesBD {
 			st = con.prepareStatement("SELECT MAX(num_r) FROM RUTA");
 			rs = st.executeQuery();
 			index = rs.getInt(1);
-			System.out.println(index+r.getNom()+r.getDesnivell()+r.getDesnivellAcumulat());
 			st = con.prepareStatement("INSERT INTO RUTA VALUES(?,?,?,?)");
 			st.setInt(1, index+1);
 			st.setString(2, r.getNom());
 			st.setDouble(3, r.getDesnivell());
 			st.setDouble(4, r.getDesnivellAcumulat());
 			st.executeUpdate();
-			/*rs = st.executeQuery("INSERT INTO RUTA VALUES(" + (index + 1) + "," + r.getNom() + "," + r.getDesnivell()
-					+ "," + r.getDesnivellAcumulat() + ")");*/
 
+			
 			// PUNTS
 			llistaPunts = r.getLlistaDePunts();
-			
 			for (int i = 0; i < llistaPunts.size(); i++) {
-				/*rs = st.executeQuery("INSERT INTO PUNTS VALUES(" + (index + 1) + "," + i + "," + r.getPuntNom(i) + ","
-						+ r.getPuntLatitud(i) + "," + r.getPuntLongitud(i) + ")");*/
 				st = con.prepareStatement("INSERT INTO PUNTS VALUES(?,?,?,?,?)");
 				st.setInt(1, index+1);
 				st.setInt(2, (i+1));
@@ -74,7 +69,6 @@ public class GestionarRutesBD {
 				st.setDouble(5, r.getPuntLongitud(i));
 				st.executeUpdate();
 			}
-			// st.setInt(1, r.);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -104,7 +98,7 @@ public class GestionarRutesBD {
 			try {
 				rs.close();
 			} catch (SQLException e) {
-				System.out.println("Error closin ResultSet");
+				System.out.println("Error closing ResultSet");
 				e.printStackTrace();
 			}
 		}
@@ -112,12 +106,12 @@ public class GestionarRutesBD {
 	}
 
 	public Ruta buscarRuta(int index) {
-		// System.out.println("SELECT * FROM RUTA WHERE num_r=" + index);
 		ResultSet rs = null;
 		ruta = new Ruta();
 		llistaPunts=new ArrayList<PuntGeo>();
 		try {
 			state = con.createStatement();
+			
 			//LEER RUTA
 			rs = state.executeQuery("SELECT * FROM RUTA WHERE num_r=" + index);
 			while (rs.next()) {
@@ -125,6 +119,7 @@ public class GestionarRutesBD {
 				ruta.setDesnivell(rs.getInt(3));
 				ruta.setDesnivellAcumulat(rs.getInt(4));
 			}
+			
 			//LEER PUNTOS
 			rs = state.executeQuery("SELECT * FROM PUNTS WHERE num_r=" + index);
 			int count = 0;
@@ -156,11 +151,4 @@ public class GestionarRutesBD {
 	public void guardar(Ruta r){
 		
 	}
-	
-	public static void main(String[] args) {
-		GestionarRutesBD ges = new GestionarRutesBD();
-		ges.llistat();
-
-	}
-
 }

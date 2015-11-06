@@ -29,6 +29,7 @@ public class UtilitzarRutesBD {
 
 		
 		// Llistat de totes les rutes
+		System.out.println("\n\n\n\nLlistat de Rutes");
 		ArrayList<Ruta> llista = gRutes.llistat();
 		for (int i=0;i<llista.size();i++){
 			llista.get(i).mostraRuta();
