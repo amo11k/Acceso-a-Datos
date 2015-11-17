@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cataleg>
+	<producte id="SKWBK102MAKEQ2">
+		<nom>Telescopi Maksutov SkyWatcher MAK 102 EQ2</nom>
+		<descripcio>Els telescopis SKYWATCHER Maksutov-Cassegrain són els telescopis més portàtils que hi ha al mercat amb aquest tipus d'òptica. Són ideals també per treballar en espais reduïts.
+Malgrat les seves reduïdes dimensions les seves prestacions són d'alt rendiment. El seu sistema òptic Diffraction Limited d'alta resolució ha estat multi-tractat per maximitzar el contrast i la definició de la imatge.
+Aquest Maksutov de SKYWATCHER ve amb un diàmetre de 102mm i es subministra amb la muntura equatorial alemanya EQ2. De tota manera, si interessés també es podria subministrar el tub solt que incorpora en la part inferior una rosca estàndard per que es pugui connectar a un trípode fotogràfic.
+Tant si s'utilitza aquest equip per a observació terrestre com si és per observació astronòmica, aquest compacte telescopi és el company ideal.</descripcio>
+		<preu>364.90</preu>
+		<data>2014-08-05T00:00:0.000Z</data>
+		<puntuacio>13</puntuacio>
+		<stock>7</stock>
+		<nom_fabr>Sky-Watcher</nom_fabr>
+		<pais_fabr>Canadà</pais_fabr>
+		<caracteristiques>
+			<descripcio_caract>Diàmetre</descripcio_caract>
+			<valor_caract>102mm</valor_caract>
+			<descripcio_caract>Distància focal</descripcio_caract>
+			<valor_caract>1300mm</valor_caract>
+			<descripcio_caract>Muntura</descripcio_caract>
+			<valor_caract>Equatorial alemana</valor_caract>
+			<descripcio_caract>Pes</descripcio_caract>
+			<valor_caract>1,93Kg</valor_caract>
+		</caracteristiques>
+		<categories>
+			<cat>Telescopi</cat>
+			<cat>Maksutov-Cassegrains</cat>
+		</categories>
+	</producte>
+	<producte id="EQ31045">
+		<nom>Telescopi Celestron AstroMaster 130 EQ 31045</nom>
+		<descripcio>Si estàs buscant un telescopi versàtil que et permeti realitzar observacions tant terrestres com astronòmiques, llavors la Sèrie Astromaster ha estat pensada per a tu. Cada model de la Sèrie Astromaster és capaç de donar una imatge correcta per observar la natura i el cel.
+
+La Sèrie Astromaster produeix nítides i lluminoses imatges de la Lluna i els planetes. Amb tots els models d'aquesta sèrie són fàcils de veure les llunes de Júpiter i els anells de Saturn. Per observar els objectes de cel profund més brillants com les galàxies i nebuloses, recomanem els telescopis reflectors Newton per la seva gran diàmetre i la seva lluminositat.
+
+• Assemblatge fàcil i ràpid sense eines
+• Acoblament permanentment del StarPointer
+• Sistema òptic d'imatge directa; ideal per a ús terrestre i astronòmic
+• Desconnexió ràpida de l'encaix a cua de milà; acoblament sense eines
+• Muntatge equatorial de disseny alemany amb calibradors de fixació per localitzar i fer un seguiment exacte dels objectes del firmament
+• Resistent trípode preensamblado amb potes d'acer en forma de tub de 3,18 cm (1,25 polzades.); proporciona una plataforma rígida i estable
+• Sistema òptic de vidre amb recobriment per obtenir imatges clares i nítides
+• Safata millorada per emmagatzemar convenientment els accessoris
+• Programari del planetari TheSkyX FirstLight Edition, amb una base de dades de 10.000 cossos celestes i imatges millorades</descripcio>
+		<preu>199.99</preu>
+		<data>2014-01-01T00:00:0.000Z</data>
+		<puntuacio>9.5</puntuacio>
+		<stock>10</stock>
+		<nom_fabr>Celestron</nom_fabr>
+		<pais_fabr>Estats Units</pais_fabr>
+		<caracteristiques>
+			<descripcio_caract>Obertura</descripcio_caract>
+			<valor_caract>130mm</valor_caract>
+			<descripcio_caract>Distància focal</descripcio_caract>
+			<valor_caract>650mm</valor_caract>
+			<descripcio_caract>Muntura</descripcio_caract>
+			<valor_caract>Equatorial alemana CG-3</valor_caract>
+		</caracteristiques>
+		<categories>
+			<cat>Telescopi</cat>
+			<cat>Reflector Newton</cat>
+		</categories>
+	</producte>
+	<producte id="SKWSKDOB10">
+		<nom>Telescopi SkyWatcher Dobson Tradicional 10'</nom>
+		<descripcio>Els telescopis amb muntura DOBSON són populars entre els astrònoms aficionats i fabricants de telescopis per la seva simplicitat. Els telescopis DOBSON de SKYWATCHER amb el seu patentat embragatge d'ajust de tensió, permeten a l'usuari augmentar o reduir la tensió per incrementar o reduir la fricció del tub amb la part lateral de la muntura DOBSON. En disposar d'aquest ajust de tensió, el tub òptic no necessita estar ben equilibrat perquè es quedi fix en una determinada posició. L'ajust de tensió pot ser estret el just per mantenir el tub en una posició fixa però que també es pugui moure en un moment donat per reajustar la posició del tub respecte a l'objecte observat. En cas d'interessar, l'ajust de tensió també pot ser atapeït al màxim per bloquejar el tub en una posició determinada.</descripcio>
+		<preu>538.90</preu>
+		<data>2014-03-05T00:00:0.000Z</data>
+		<puntuacio>15</puntuacio>
+		<stock>5</stock>
+		<nom_fabr>Sky-Watcher</nom_fabr>
+		<pais_fabr>Canadà</pais_fabr>
+		<caracteristiques>
+			<descripcio_caract>Diàmetre</descripcio_caract>
+			<valor_caract>254mm</valor_caract>
+			<descripcio_caract>Distància focal</descripcio_caract>
+			<valor_caract>1200mm</valor_caract>
+			<descripcio_caract>Muntura</descripcio_caract>
+			<valor_caract>Dobson 10''</valor_caract>
+		</caracteristiques>
+		<categories>
+			<cat>Telescopi</cat>
+			<cat>Reflector Newton</cat>
+		</categories>
+	</producte>
+</cataleg>

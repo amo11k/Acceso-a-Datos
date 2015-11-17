@@ -1,0 +1,19 @@
+{ "finques":
+     [
+	{"adreça":"Carrer de Dalt, 1",
+	 "vivendes":
+	   [
+		{"pis":1,"porta":"A","noms":["Nom 1","Nom 2"] },
+		{"pis":1,"porta":"B","noms":["Nom3","Nom 4"] },
+		{"pis":2,"porta":"A","noms":["Nom 5"] },
+		{"pis":2,"porta":"B","noms":["Nom 6","Nom 7","Nom 8"] }
+	   ]
+	} ,
+	{"adreça":"Carrer de Dalt, 3",
+	 "vivendes":
+	   [
+		{"pis":1,"porta":"A","noms":["Nom 9","Nom 10","Nom 11","Nom 12"] }
+	   ]
+	}
+     ]
+}
