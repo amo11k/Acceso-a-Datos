@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/11/2015 18:19:51 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="dades.Punt" table="punt" optimistic-lock="version">
+        <composite-id name="id" class="dades.PuntId">
+            <key-property name="numR" type="int">
+                <column name="num_r" />
+            </key-property>
+            <key-property name="numP" type="int">
+                <column name="num_p" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="ruta" class="dades.Ruta" update="false" insert="false" fetch="select">
+            <column name="num_r" not-null="true" />
+        </many-to-one>
+        <property name="nomP" type="string">
+            <column name="nom_p" />
+        </property>
+        <property name="latitud" type="java.lang.Float">
+            <column name="latitud" precision="8" scale="8" />
+        </property>
+        <property name="longitud" type="java.lang.Float">
+            <column name="longitud" precision="8" scale="8" />
+        </property>
+    </class>
+</hibernate-mapping>

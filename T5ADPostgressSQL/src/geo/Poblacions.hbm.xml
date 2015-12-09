@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/11/2015 17:08:59 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="geo.Poblacions" table="poblacions" optimistic-lock="version">
+        <id name="codM" type="int">
+            <column name="cod_m" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="comarques" class="geo.Comarques" fetch="select">
+            <column name="nom_c" length="50" />
+        </many-to-one>
+        <property name="nom" type="string">
+            <column name="nom" length="50" not-null="true" />
+        </property>
+        <property name="poblacio" type="java.lang.Integer">
+            <column name="poblacio" precision="6" scale="0" />
+        </property>
+        <property name="extensio" type="big_decimal">
+            <column name="extensio" precision="6" />
+        </property>
+        <property name="altura" type="java.lang.Short">
+            <column name="altura" precision="4" scale="0" />
+        </property>
+        <property name="longitud" type="string">
+            <column name="longitud" length="50" />
+        </property>
+        <property name="latitud" type="string">
+            <column name="latitud" length="50" />
+        </property>
+        <property name="llengua" type="java.lang.Character">
+            <column name="llengua" length="1" />
+        </property>
+        <set name="institutses" table="instituts" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cod_m" precision="5" scale="0" />
+            </key>
+            <one-to-many class="geo.Instituts" />
+        </set>
+    </class>
+</hibernate-mapping>

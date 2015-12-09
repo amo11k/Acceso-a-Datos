@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/11/2015 17:08:59 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="geo.Instituts" table="instituts" optimistic-lock="version">
+        <id name="codi" type="string">
+            <column name="codi" length="8" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="poblacions" class="geo.Poblacions" fetch="select">
+            <column name="cod_m" precision="5" scale="0" />
+        </many-to-one>
+        <property name="nom" type="string">
+            <column name="nom" length="60" />
+        </property>
+        <property name="adreca" type="string">
+            <column name="adreca" length="100" />
+        </property>
+        <property name="numero" type="string">
+            <column name="numero" length="5" />
+        </property>
+        <property name="codpostal" type="java.lang.Integer">
+            <column name="codpostal" precision="5" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

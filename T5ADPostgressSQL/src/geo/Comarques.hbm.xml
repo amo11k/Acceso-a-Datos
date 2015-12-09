@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 10/11/2015 17:08:59 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="geo.Comarques" table="comarques" optimistic-lock="version">
+        <id name="nomC" type="string">
+            <column name="nom_c" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="provincia" type="string">
+            <column name="provincia" length="25" />
+        </property>
+        <set name="poblacionses" table="poblacions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nom_c" length="50" />
+            </key>
+            <one-to-many class="geo.Poblacions" />
+        </set>
+    </class>
+</hibernate-mapping>
