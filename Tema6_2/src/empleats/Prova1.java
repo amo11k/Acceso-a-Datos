@@ -7,7 +7,7 @@ public class Prova1 {
 	public static void main(String[] args) {
 		ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o");
 
-		/*Empleat e = new Empleat("11111111a", "Albert", 10, 45, 1000, null, null, null, null, null);
+		Empleat e = new Empleat("11111111a", "Albert", 10, 45, 1000, null, null, null, null, null);
 
 		// les dades més complicades les introduïm de forma especial
 		e.setAdreca(new Adreca("C/ Major, 7", "12001", "Castelló"));
@@ -18,8 +18,8 @@ public class Prova1 {
 
 		bd.store(e);
 
-		bd.close();*/
-		Empleat e = new Empleat("22222222b","Berta",10,35,1700,null,null,null,null,null);
+		bd.close();
+		/*Empleat e = new Empleat("22222222b","Berta",10,35,1700,null,null,null,null,null);
 		Empleat f = new Empleat("33333333c","Clàudia",20,37,1500,null,null,null,null,null);
 		 
 		//les dades més complicades les introduïm de forma especial
@@ -36,6 +36,6 @@ public class Prova1 {
 		bd.store(e);
 		bd.store(f);
 		 
-		bd.close();
+		bd.close();*/
 	}
 }
