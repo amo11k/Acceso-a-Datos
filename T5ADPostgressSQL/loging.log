@@ -4536,3 +4536,38 @@ Caused by: javax.naming.NoInitialContextException: Need to specify class name in
 	at javax.naming.InitialContext.getNameParser(InitialContext.java:499)
 	at org.hibernate.service.jndi.internal.JndiServiceImpl.parseName(JndiServiceImpl.java:86)
 	... 22 more
+2016-01-21 15:56:59 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-01-21 15:56:59 INFO  Version:41 - HHH000412: Hibernate Core {4.0.1.Final}
+2016-01-21 15:56:59 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-01-21 15:56:59 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2016-01-21 15:56:59 INFO  Configuration:1920 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-01-21 15:56:59 INFO  Configuration:1939 - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-01-21 15:56:59 INFO  Configuration:714 - HHH000221: Reading mappings from resource: geo/Poblacions.hbm.xml
+2016-01-21 15:57:00 INFO  Configuration:714 - HHH000221: Reading mappings from resource: geo/Instituts.hbm.xml
+2016-01-21 15:57:00 INFO  Configuration:714 - HHH000221: Reading mappings from resource: geo/Comarques.hbm.xml
+2016-01-21 15:57:00 INFO  Configuration:2061 - HHH000041: Configured SessionFactory: SF_PostgressSQL
+2016-01-21 15:57:00 INFO  DriverManagerConnectionProviderImpl:90 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-01-21 15:57:00 INFO  DriverManagerConnectionProviderImpl:110 - HHH000115: Hibernate connection pool size: 20
+2016-01-21 15:57:00 INFO  DriverManagerConnectionProviderImpl:113 - HHH000006: Autocommit mode: false
+2016-01-21 15:57:00 INFO  DriverManagerConnectionProviderImpl:127 - HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://172.16.1.2:5432/geo_2015]
+2016-01-21 15:57:00 INFO  DriverManagerConnectionProviderImpl:132 - HHH000046: Connection properties: {user=geo_2015, password=****}
+2016-01-21 15:57:00 INFO  Dialect:121 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-01-21 15:57:00 INFO  LobCreatorBuilder:120 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-21 15:57:00 INFO  TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-01-21 15:57:00 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2016-01-21 15:57:01 WARN  SessionFactoryRegistry:102 - HHH000277: Could not bind factory to JNDI
+org.hibernate.service.jndi.JndiException: Error parsing JNDI name [SF_PostgressSQL]
+	at org.hibernate.service.jndi.internal.JndiServiceImpl.parseName(JndiServiceImpl.java:92)
+	at org.hibernate.service.jndi.internal.JndiServiceImpl.bind(JndiServiceImpl.java:108)
+	at org.hibernate.internal.SessionFactoryRegistry.addSessionFactory(SessionFactoryRegistry.java:89)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:441)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1737)
+	at exemples.SessionFactoryUtil.getSessionFactory(SessionFactoryUtil.java:19)
+	at exemples.TercerAcces.main(TercerAcces.java:15)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:662)
+	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:307)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:344)
+	at javax.naming.InitialContext.getNameParser(InitialContext.java:499)
+	at org.hibernate.service.jndi.internal.JndiServiceImpl.parseName(JndiServiceImpl.java:86)
+	... 6 more

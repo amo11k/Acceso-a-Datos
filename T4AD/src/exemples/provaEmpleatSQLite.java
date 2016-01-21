@@ -31,7 +31,7 @@ public class provaEmpleatSQLite {
 			statement = con.createStatement();
 
 			sentenciaSQL = "CREATE TABLE EMPLEAT(" + "num INTEGER CONSTRAINT cp_emp PRIMARY KEY, " + "nom TEXT, "
-					+ "depart INTEGER, " + "edat INTEGER, " + "sou REAL " + ")";
+					+ "depart INTEGER, " + "edat INTEGER, " + "sou REAL " + ")"; //SQL PARA CREAR TABLA
 
 			statement.executeUpdate(sentenciaSQL);
 
@@ -55,7 +55,7 @@ public class provaEmpleatSQLite {
 		}
 	}
 
-	public static void inserirTaulaEmpleat() {
+	public static void inserirTaulaEmpleat() { //METODO INSERTAR
 		Connection con = null;
 		Statement statement = null;
 		String sentenciaSQL = null;
@@ -68,7 +68,7 @@ public class provaEmpleatSQLite {
 
 			statement = con.createStatement();
 
-			sentenciaSQL = "INSERT INTO EMPLEAT VALUES (1,'Andreu',10,32,1000.0)";
+			sentenciaSQL = "INSERT INTO EMPLEAT VALUES (1,'Andreu',10,32,1000.0)"; //SQL INSERTAR
 			statement.executeUpdate(sentenciaSQL);
 
 			sentenciaSQL = "INSERT INTO EMPLEAT VALUES (2,'Bernat',20,28,1200.0)";
@@ -78,7 +78,7 @@ public class provaEmpleatSQLite {
 			statement.executeUpdate(sentenciaSQL);
 
 			sentenciaSQL = "INSERT INTO EMPLEAT VALUES (4,'Damià',10,40,1500.0)";
-			statement.executeUpdate(sentenciaSQL);
+			statement.executeUpdate(sentenciaSQL); //EJECUTA SIN RETURN
 
 		} catch (SQLException ex) {
 			System.out.println("Error " + ex.getMessage());
@@ -113,7 +113,7 @@ public class provaEmpleatSQLite {
 
 			statement = con.createStatement();
 
-			sentenciaSQL = "UPDATE EMPLEAT SET sou = sou * 1.05";
+			sentenciaSQL = "UPDATE EMPLEAT SET sou = sou * 1.05"; //SQL UPDATE
 			statement.executeUpdate(sentenciaSQL);
 
 			sentenciaSQL = "UPDATE EMPLEAT SET depart=20 WHERE num = 3";
@@ -154,12 +154,12 @@ public class provaEmpleatSQLite {
 			statement = con.createStatement();
 
 			sentenciaSQL = "SELECT * FROM EMPLEAT WHERE sou > 1100";
-			rs = statement.executeQuery(sentenciaSQL);
+			rs = statement.executeQuery(sentenciaSQL); //CONSULTA CON RETURN
 
 			System.out.println("Núm. Nom Dep Edat Sou");
 			System.out.println("-----------------------------------------");
 
-			while (rs.next()) {
+			while (rs.next()) {							///IMPORTANTE, COMO SACAR DATOS DE RESULTSET
 				System.out.print(rs.getInt(1) + " ");
 				System.out.print(rs.getString(2) + " ");
 				System.out.print(rs.getInt(3) + " ");

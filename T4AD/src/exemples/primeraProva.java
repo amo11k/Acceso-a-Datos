@@ -13,7 +13,7 @@ public class primeraProva {
             try {
                 //Class.forName("org.postgresql.Driver");
                 //Class.forName("org.postgresql.Driver");
-                Class.forName("oracle.jdbc.driver.OracleDriver");
+                Class.forName("oracle.jdbc.driver.OracleDriver"); //SE VA A CARGAR LA CLASE, EN ESTE CASO ORACLE
 
                 
                 String postgresql="jdbc:postgresql://172.16.1.2:5432/geo_2015",
@@ -26,17 +26,17 @@ public class primeraProva {
                 		mySqlPass="geo",
                 		oraclePass="tiger";
 
-                Connection con = DriverManager.getConnection(mySql, mySqlUsr, mySqlPass);
+                Connection con = DriverManager.getConnection(mySql, mySqlUsr, mySqlPass); //CREAR CONEXION, HAY QUE PASARLE UNA URL, UN USER Y UN PASSWORD
                 
-                Statement st = con.createStatement();
+                Statement st = con.createStatement(); //Instanciació del Statment a partir d’una connexió activa
                 
-                ResultSet rs = st.executeQuery("Select * FROM comarques");
+                ResultSet rs = st.executeQuery("Select * FROM comarques"); //Ejecucion del statement
                 
                 while(rs.next()){
                 	System.out.println(rs.getString(1)+" --> "+rs.getString(2));
                 }
                 rs.close();
-                st.close();
+                st.close(); // CIERRE DE STATEMENT
                 
             } catch (ClassNotFoundException ex) {
                 System.out.println("No s'ha trobat el controlador JDBC");
