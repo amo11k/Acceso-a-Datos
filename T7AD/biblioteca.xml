@@ -1,0 +1,14 @@
+﻿<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <llibreria>
+    <llibre>
+      <ISBN>8401387744</ISBN>
+      <titol>La caiguda dels gegants</titol>
+      <aprofundiment>bàsic</aprofundiment>
+      <autors>
+        <autor>Ken Follet</autor>
+      </autors>
+      <editorial>La Rosa dels Vents</editorial>
+      <preu>23,65</preu>
+    </llibre>
+  </llibreria>
+</biblioteca>
