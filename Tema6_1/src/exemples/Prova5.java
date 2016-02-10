@@ -14,7 +14,7 @@ public class Prova5 {
         ResultSet rs = con.createStatement().executeQuery("SELECT nom,correus_e FROM persona4 WHERE nom='Ferran'");
         while (rs.next()) {
             System.out.println("Correus de " + rs.getString(1));
-            String[] correus = (String[]) rs.getArray(2).getArray(); //SACAR ARRAYS
+            String[] correus = (String[]) rs.getArray(2).getArray(); //SACAR ARRAYS ojojojojo
             for (String c : correus) {
                 System.out.println(c);
             }

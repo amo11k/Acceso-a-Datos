@@ -16,7 +16,7 @@ public class Prova4 {
 		PreparedStatement st = con.prepareStatement("INSERT INTO persona4(nif,nom,correus_e) VALUES(?,?,?)");
 		st.setString(1, "66666666f");
 		st.setString(2, "Ferran");
-		String[] correus = { "alu66666666f@ieselcaminas.org", "ferran@gmail.com", "f_66@hotmail.com" };
+		String[] correus = { "alu66666666f@ieselcaminas.org", "ferran@gmail.com", "f_66@hotmail.com" }; //GUARDAR UN ARRAY
 		Array c = con.createArrayOf("varchar", correus);
 		st.setArray(3, c);
 		st.executeUpdate();

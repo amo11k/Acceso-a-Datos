@@ -10,9 +10,9 @@ public class Prova1 {
 
         String url = "jdbc:postgresql://172.16.1.2:5432/r04";
 
-        Connection con = DriverManager.getConnection(url, "r04", "r04");
+        Connection con = DriverManager.getConnection(url, "r04", "r04"); //CONECTAR CON PROSTGRESQL
 
-        ResultSet rs = con.createStatement().executeQuery("select nom,major_edat from persona4 order by nom");
+        ResultSet rs = con.createStatement().executeQuery("select nom,major_edat from persona4 order by nom"); 
 
         while (rs.next()) {
             if (rs.getBoolean(2))

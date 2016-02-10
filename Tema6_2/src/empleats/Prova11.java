@@ -13,7 +13,7 @@ public class Prova11 {
 		//f.setDepartament(10);
 		//f.setAdreca(new Adreca(null, null, "Castelló"));
 
-		ObjectSet<Empleat> llista = bd.queryByExample(new Empleat());
+		ObjectSet<Empleat> llista = bd.queryByExample(new Empleat()); //SACA UNA LISTA DE OBJETO
 		for (Empleat e : llista) {
 			System.out.println("Nif: " + e.getNif() + ". Nom: " + e.getNom() + ". Departament:" + e.getDepartament()
 					+ ". Població:" + e.getAdreca().getPoblacio());

@@ -5,7 +5,7 @@ import com.db4o.ObjectContainer;
 
 public class Prova1 {
 	public static void main(String[] args) {
-		ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o");
+		ObjectContainer bd = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "Empleats.db4o"); //CONECTAR CON BASE DB4O
 
 		Empleat e = new Empleat("11111111a", "Albert", 10, 45, 1000, null, null, null, null, null);
 

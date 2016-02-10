@@ -24,7 +24,7 @@ public class Prova2 {
         st.setString(1, "55555555e");
         st.setString(2, "Eva");
         st.setCharacterStream(3, in1, (int) f1.length()); //GRANDARIA, PORQUE ES UNA FOTO POR ESO HAGO LOS Fs.
-        st.setBinaryStream(4, in2, (int) f2.length());
+        st.setBinaryStream(4, in2, (int) f2.length());		//PARA GUARDAR FOTOS Y ARCHIVOS
         st.executeUpdate();
         in1.close();
         in2.close();
